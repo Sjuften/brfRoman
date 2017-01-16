@@ -9,7 +9,6 @@ namespace RomeNumberConverter.App.Types
         {
             Input = input.Trim();
         }
-
         public string GetResult() => string.Format($"{Input} is not a valid argument");
     }
 }
