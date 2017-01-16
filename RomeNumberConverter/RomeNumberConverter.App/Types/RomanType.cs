@@ -18,9 +18,9 @@ namespace RomeNumberConverter.App
             Input = input.ToUpper().Trim();
         }
 
-        public string GetResult() => ConvertToRoman(Input);
+        public string GetResult() => ConvertRomanToDecimal(Input);
 
-        private string ConvertToRoman(string roman)
+        private string ConvertRomanToDecimal(string roman)
         {
             //There is very little information that suggests that the system originally had a notation for zero.
             //However, the letter N has been used to represent zero in a text from around 725AD. This will be used in the algorithm.
