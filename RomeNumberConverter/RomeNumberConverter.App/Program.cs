@@ -6,7 +6,7 @@ namespace RomeNumberConverter.App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This is a rome number converter");
+            Console.WriteLine("This is a rome/number value converter");
             Console.WriteLine("------------");
             Console.WriteLine();
             while (true)
