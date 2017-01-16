@@ -5,24 +5,32 @@ namespace RomeNumberConverter.App
 {
     public class DecimalType : IConverter
     {
-        public string Value { get; set; }
-
-        public string Convert(string input)
+        public string Input { get; private set; }
+        public DecimalType(string input, IParser parser)
         {
-            decimal result;
-            if (decimal.TryParse(input, out result))
-                return ConvertToRoman(result);
+            if (parser.TryParseDecimal(input))
+                Input = input.ToUpper().Trim();
+
             else
                 throw new ArgumentException("Argument is not valid");
+        }
+       
+        public string GetResult()
+        {
+            decimal result;
+            if (decimal.TryParse(Input, out result))
+                return ConvertToRoman(result);
+            else
+                return "Argument is not valid";
         }
 
 
         private string ConvertToRoman(decimal number)
         {
-            if ((number < 0) || (number > 3999)) throw new ArgumentOutOfRangeException("Value must be between 1 and 3999");
+            if ((number < 0) || (number > 3999)) return "Argument is not valid - Value must be between 1 and 3999";
             if (number < 1) return string.Empty;
             if (number >= 1000) return "M" + ConvertToRoman(number - 1000);
-            if (number >= 900) return "CM" + ConvertToRoman(number - 900); //EDIT: i've typed 400 instead 900
+            if (number >= 900) return "CM" + ConvertToRoman(number - 900);
             if (number >= 500) return "D" + ConvertToRoman(number - 500);
             if (number >= 400) return "CD" + ConvertToRoman(number - 400);
             if (number >= 100) return "C" + ConvertToRoman(number - 100);
@@ -34,7 +42,7 @@ namespace RomeNumberConverter.App
             if (number >= 5) return "V" + ConvertToRoman(number - 5);
             if (number >= 4) return "IV" + ConvertToRoman(number - 4);
             if (number >= 1) return "I" + ConvertToRoman(number - 1);
-            throw new ArgumentOutOfRangeException("Value must be between 1 and 3999");
+            return "Argument is not valid - Value must be between 1 and 3999";
         }
     }
 }

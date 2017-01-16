@@ -50,6 +50,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\NullObjectType.cs" />
+    <Compile Include="RomanDigits.cs" />
     <Compile Include="Types\RomanType.cs" />
     <Compile Include="TypeFactory.cs" />
   </ItemGroup>

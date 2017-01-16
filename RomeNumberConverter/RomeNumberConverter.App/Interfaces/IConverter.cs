@@ -2,6 +2,7 @@
 {
     public interface IConverter
     {
-        string Convert(string input);
+        string Input { get;}
+        string GetResult();
     }
 }

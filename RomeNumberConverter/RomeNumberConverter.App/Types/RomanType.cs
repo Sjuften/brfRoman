@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using RomeNumberConverter.App.Interfaces;
+using static RomeNumberConverter.App.Types.RomanDigits;
 
 namespace RomeNumberConverter.App
 {
 
     public class RomanType : IConverter
     {
-        private enum RomanDigit
+        public string Input { get; private set; }
+
+        public RomanType(string input, IParser parser)
         {
-            I = 1,
-            V = 5,
-            X = 10,
-            L = 50,
-            C = 100,
-            D = 500,
-            M = 1000
+            if (parser.TryParseRoman(input))
+                Input = input.ToUpper().Trim();
+
+            else
+                throw new ArgumentException("Argument is not valid");
         }
-        public string Convert(string input) => ConvertToRoman(input.ToUpper());
+
+        public string GetResult() => ConvertToRoman(Input);
+
         private string ConvertToRoman(string roman)
         {
             //There is very little information that suggests that the system originally had a notation for zero.
             //However, the letter N has been used to represent zero in a text from around 725AD. This will be used in the algorithm.
             // Rule 7
-            roman = roman.ToUpper().Trim();
             if (roman == "N") return 0.ToString();
 
             // Rule 4
@@ -48,7 +49,7 @@ namespace RomeNumberConverter.App
                 // Valid character?
                 if ("IVXLCDM".IndexOf(numeral) == -1)
                     return "Input is not valid - according to rule 1";
-                    //throw new ArgumentException("Invalid numeral");
+                //throw new ArgumentException("Invalid numeral");
 
                 // Duplicate?
                 if (numeral == last)

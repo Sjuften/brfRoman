@@ -4,9 +4,15 @@ namespace RomeNumberConverter.App.Types
 {
     public class NullObjectType : IConverter
     {
-        public string Convert(string input)
+        public string Input { get; private set; }
+        public NullObjectType(string input)
         {
-            return "Is not a valid argument";
+            Input = input.Trim();
+        }
+
+        public string GetResult()
+        {
+            return $"{Input} Is not a valid argument";
         }
     }
 }
