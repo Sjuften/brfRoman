@@ -15,7 +15,7 @@ namespace RomeNumberConverter.App
                 throw new ArgumentException("Argument is not valid");
         }
        
-        public string GetResult()
+        public string GetConvertionResult()
         {
             decimal result;
             if (decimal.TryParse(Input, out result))

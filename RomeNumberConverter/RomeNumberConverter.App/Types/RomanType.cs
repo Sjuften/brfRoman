@@ -19,7 +19,7 @@ namespace RomeNumberConverter.App
                 throw new ArgumentException("Argument is not valid");
         }
 
-        public string GetResult() => ConvertToRoman(Input);
+        public string GetConvertionResult() => ConvertToRoman(Input);
 
         private string ConvertToRoman(string roman)
         {

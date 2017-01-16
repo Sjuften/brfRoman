@@ -10,7 +10,7 @@ namespace RomeNumberConverter.App.Types
             Input = input.Trim();
         }
 
-        public string GetResult()
+        public string GetConvertionResult()
         {
             return $"{Input} Is not a valid argument";
         }
