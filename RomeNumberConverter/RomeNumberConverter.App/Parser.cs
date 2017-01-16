@@ -4,6 +4,7 @@ namespace RomeNumberConverter.App
 {
     public class Parser : IParser
     {
+        private string[] romanLetters = new[] { "I", "V", "X", "L", "C", "D", "M" };
 
         public bool TryParseDecimal(string number)
         {
@@ -16,7 +17,6 @@ namespace RomeNumberConverter.App
 
         public bool TryParseRoman(string roman)
         {
-            var romanLetters = new[] { "I", "V", "X", "L", "C", "D", "M" };
             foreach (var letter in roman.ToUpper())
             {
                 if (!romanLetters.Contains(letter.ToString()))
