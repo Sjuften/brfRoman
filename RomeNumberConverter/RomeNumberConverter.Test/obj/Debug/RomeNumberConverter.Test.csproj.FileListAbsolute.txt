@@ -1,6 +1,5 @@
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.Test\bin\Debug\RomeNumberConverter.Test.dll
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.Test\bin\Debug\RomeNumberConverter.Test.pdb
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.Test\obj\Debug\RomeNumberConverter.Test.csprojResolveAssemblyReference.cache
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.Test\obj\Debug\RomeNumberConverter.Test.dll
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.Test\obj\Debug\RomeNumberConverter.Test.pdb

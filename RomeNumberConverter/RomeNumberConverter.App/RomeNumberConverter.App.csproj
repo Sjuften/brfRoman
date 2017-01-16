@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IConverter.cs" />
-    <Compile Include="Interfaces\IParser.cs" />
+    <Compile Include="Interfaces\ITypeOf.cs" />
+    <Compile Include="TypeOf.cs" />
     <Compile Include="Types\DecimalType.cs" />
-    <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\NullObjectType.cs" />
