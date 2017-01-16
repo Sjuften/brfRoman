@@ -5,19 +5,19 @@ namespace RomeNumberConverter.App
 {
     public static class TypeFactory
     {
-        public static IConverter Get(string input, IParser parser)
+        public static IConverter Get(string input, ITypeOf typeOf)
         {
-            return BestMatch(input, parser);
+            return BestMatch(input, typeOf);
         }
 
-        private static IConverter BestMatch(string input, IParser parser)
+        private static IConverter BestMatch(string input, ITypeOf typeOf)
         {
-           
-            if (parser.TryParseDecimal(input))
-                return new DecimalType(input, parser);
 
-            if (parser.TryParseRoman(input))
-                return new RomanType(input, parser);
+            if (typeOf.IsDecimal(input))
+                return new DecimalType(input, typeOf);
+
+            if (typeOf.IsRoman(input))
+                return new RomanType(input, typeOf);
 
             else
                 return new NullObjectType(input);

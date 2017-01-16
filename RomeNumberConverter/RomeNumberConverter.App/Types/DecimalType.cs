@@ -7,10 +7,9 @@ namespace RomeNumberConverter.App
     {
         public string Input { get; private set; }
 
-
-        public DecimalType(string input, IParser parser)
+        public DecimalType(string input, ITypeOf typeOf)
         {
-            if (!parser.TryParseDecimal(input))
+            if (!typeOf.IsDecimal(input))
                 throw new ArgumentException("Argument is not valid");
 
             Input = input.ToUpper().Trim();

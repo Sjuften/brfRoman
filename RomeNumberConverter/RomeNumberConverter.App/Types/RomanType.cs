@@ -10,9 +10,9 @@ namespace RomeNumberConverter.App
     {
         public string Input { get; private set; }
 
-        public RomanType(string input, IParser parser)
+        public RomanType(string input, ITypeOf typeOf)
         {
-            if (!parser.TryParseRoman(input))
+            if (!typeOf.IsRoman(input))
                 throw new ArgumentException("Argument is not valid");
 
             Input = input.ToUpper().Trim();
