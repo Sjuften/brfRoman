@@ -12,14 +12,13 @@ namespace RomeNumberConverter.App
 
         public RomanType(string input, IParser parser)
         {
-            if (parser.TryParseRoman(input))
-                Input = input.ToUpper().Trim();
-
-            else
+            if (!parser.TryParseRoman(input))
                 throw new ArgumentException("Argument is not valid");
+
+            Input = input.ToUpper().Trim();
         }
 
-        public string GetConvertionResult() => ConvertToRoman(Input);
+        public string GetResult() => ConvertToRoman(Input);
 
         private string ConvertToRoman(string roman)
         {

@@ -10,9 +10,6 @@ namespace RomeNumberConverter.App.Types
             Input = input.Trim();
         }
 
-        public string GetConvertionResult()
-        {
-            return $"{Input} Is not a valid argument";
-        }
+        public string GetResult() => string.Format($"{Input} is not a vlid argument");
     }
 }

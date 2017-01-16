@@ -6,16 +6,17 @@ namespace RomeNumberConverter.App
     public class DecimalType : IConverter
     {
         public string Input { get; private set; }
+
+
         public DecimalType(string input, IParser parser)
         {
-            if (parser.TryParseDecimal(input))
-                Input = input.ToUpper().Trim();
-
-            else
+            if (!parser.TryParseDecimal(input))
                 throw new ArgumentException("Argument is not valid");
+
+            Input = input.ToUpper().Trim();
         }
-       
-        public string GetConvertionResult()
+
+        public string GetResult()
         {
             decimal result;
             if (decimal.TryParse(Input, out result))

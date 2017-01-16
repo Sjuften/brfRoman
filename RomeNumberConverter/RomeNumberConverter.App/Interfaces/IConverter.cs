@@ -3,6 +3,6 @@
     public interface IConverter
     {
         string Input { get;}
-        string GetConvertionResult();
+        string GetResult();
     }
 }
