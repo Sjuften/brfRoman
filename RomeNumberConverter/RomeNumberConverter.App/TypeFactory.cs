@@ -3,9 +3,9 @@ using RomeNumberConverter.App.Types;
 
 namespace RomeNumberConverter.App
 {
-    public static class TypeForConvertionFactory
+    public static class TypeFactory
     {
-        public static IConverter GetType(string input, IParser parser)
+        public static IConverter Get(string input, IParser parser)
         {
             return BestMatch(input, parser);
         }
@@ -20,9 +20,7 @@ namespace RomeNumberConverter.App
                 return new RomanType();
 
             else
-            {
                 return new NullObjectType();
-            }
 
         }
     }

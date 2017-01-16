@@ -4,7 +4,7 @@ namespace RomeNumberConverter.App
 {
     public class Parser : IParser
     {
-        private string[] romanLetters = new[] { "I", "V", "X", "L", "C", "D", "M" };
+        private string[] romanLetters = new[] { "N","I", "V", "X", "L", "C", "D", "M" };
 
         public bool TryParseDecimal(string number)
         {

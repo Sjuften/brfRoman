@@ -47,7 +47,8 @@ namespace RomeNumberConverter.App
             {
                 // Valid character?
                 if ("IVXLCDM".IndexOf(numeral) == -1)
-                    throw new ArgumentException("Invalid numeral");
+                    return "Input is not valid - according to rule 1";
+                    //throw new ArgumentException("Invalid numeral");
 
                 // Duplicate?
                 if (numeral == last)

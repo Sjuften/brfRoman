@@ -12,11 +12,11 @@ namespace RomeNumberConverter.App
             while (true)
             {
                 Console.WriteLine("Enter a number(A roman value or number value)");
-                var number = Console.ReadLine().Trim();
-                var typeForConvertion = TypeForConvertionFactory.GetType(number, new Parser());
-                var result = typeForConvertion.Convert(number);
+                var input = Console.ReadLine().Trim();
+                var typeForConvertion = TypeFactory.Get(input, new Parser());
+                var result = typeForConvertion.Convert(input);
                 Console.WriteLine("The converted result");
-                Console.WriteLine($"the Input: {number} is converted to: {result}");
+                Console.WriteLine($"the Input: {input} is converted to: {result}");
             }
         }
     }
