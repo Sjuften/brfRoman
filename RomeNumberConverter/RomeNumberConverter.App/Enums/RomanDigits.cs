@@ -1,4 +1,4 @@
-﻿namespace RomeNumberConverter.App.Types
+﻿namespace RomeNumberConverter.App.Enums
 {
     public class RomanDigits
     {

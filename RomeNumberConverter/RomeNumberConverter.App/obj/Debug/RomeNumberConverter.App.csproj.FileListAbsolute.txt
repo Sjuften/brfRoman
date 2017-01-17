@@ -3,3 +3,4 @@ C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\Rom
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.App\bin\Debug\RomeNumberConverter.App.pdb
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.App\obj\Debug\RomeNumberConverter.App.exe
 C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.App\obj\Debug\RomeNumberConverter.App.pdb
+C:\Users\bergp\Documents\Visual Studio 2015\Projects\BRF\RomeNumberConverter\RomeNumberConverter.App\obj\Debug\RomeNumberConverter.App.csprojResolveAssemblyReference.cache

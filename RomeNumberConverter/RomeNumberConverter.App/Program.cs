@@ -1,4 +1,5 @@
 ﻿using System;
+using static RomeNumberConverter.App.Enums.ConverterTypes;
 
 namespace RomeNumberConverter.App
 {
@@ -13,7 +14,7 @@ namespace RomeNumberConverter.App
             {
                 Console.WriteLine("Enter a number(A roman value or number value)");
                 var input = Console.ReadLine().Trim();
-                var result = TypeFactory.Get(input, new TypeOf()).GetResult();
+                var result = ConverterFactory.Get(input, Converters.RomanDecimal).GetResult();
                 Console.WriteLine("The converted result");
                 Console.WriteLine($"the Input: {input} is converted to: {result}");
             }

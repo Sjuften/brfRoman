@@ -2,10 +2,10 @@
 
 namespace RomeNumberConverter.App.Types
 {
-    public class NullObjectType : IConverter
+    public class NullObjectConverter : IConverter
     {
         public string Input { get; private set; }
-        public NullObjectType(string input)
+        public NullObjectConverter(string input)
         {
             Input = input.Trim();
         }

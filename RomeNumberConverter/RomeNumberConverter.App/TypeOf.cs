@@ -2,11 +2,11 @@
 using System.Linq;
 namespace RomeNumberConverter.App
 {
-    public class TypeOf : ITypeOf
+    public static class TypeOf
     {
-        private string[] romanLetters = new[] { "N", "I", "V", "X", "L", "C", "D", "M" };
+        private static string[] romanLetters = new[] { "N", "I", "V", "X", "L", "C", "D", "M" };
 
-        public bool IsDecimal(string number)
+        public static bool IsDecimal(string number)
         {
             decimal result;
             if (decimal.TryParse(number, out result))
@@ -15,7 +15,7 @@ namespace RomeNumberConverter.App
             return false;
         }
 
-        public bool IsRoman(string roman)
+        public static bool IsRoman(string roman)
         {
             foreach (var letter in roman.ToUpper())
             {
