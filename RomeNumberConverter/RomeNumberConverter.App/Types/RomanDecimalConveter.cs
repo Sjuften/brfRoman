@@ -19,16 +19,16 @@ namespace RomeNumberConverter.App
         public string GetResult()
         {
             if (TypeOf.IsDecimal(Input))
-                return ConvertDecimalToRoman(decimal.Parse(Input));
+                return ToRoman(decimal.Parse(Input));
 
             if (TypeOf.IsRoman(Input))
-                return ConvertRomanToDecimal(Input);
+                return ToDecimal(Input);
 
             else
                 return "Argument is not valid";
         }
 
-        private string ConvertRomanToDecimal(string roman)
+        private string ToDecimal(string roman)
         {
             //There is very little information that suggests that the system originally had a notation for zero.
             //However, the letter N has been used to represent zero in a text from around 725AD. This will be used in the algorithm.
@@ -149,23 +149,23 @@ namespace RomeNumberConverter.App
             return total.ToString();
         }
 
-        private string ConvertDecimalToRoman(decimal number)
+        private string ToRoman(decimal number)
         {
             if ((number < 0) || (number > 3999)) return "Argument is not valid - Value must be between 1 and 3999";
             if (number < 1) return string.Empty;
-            if (number >= 1000) return "M" + ConvertDecimalToRoman(number - 1000);
-            if (number >= 900) return "CM" + ConvertDecimalToRoman(number - 900);
-            if (number >= 500) return "D" + ConvertDecimalToRoman(number - 500);
-            if (number >= 400) return "CD" + ConvertDecimalToRoman(number - 400);
-            if (number >= 100) return "C" + ConvertDecimalToRoman(number - 100);
-            if (number >= 90) return "XC" + ConvertDecimalToRoman(number - 90);
-            if (number >= 50) return "L" + ConvertDecimalToRoman(number - 50);
-            if (number >= 40) return "XL" + ConvertDecimalToRoman(number - 40);
-            if (number >= 10) return "X" + ConvertDecimalToRoman(number - 10);
-            if (number >= 9) return "IX" + ConvertDecimalToRoman(number - 9);
-            if (number >= 5) return "V" + ConvertDecimalToRoman(number - 5);
-            if (number >= 4) return "IV" + ConvertDecimalToRoman(number - 4);
-            if (number >= 1) return "I" + ConvertDecimalToRoman(number - 1);
+            if (number >= 1000) return "M" + ToRoman(number - 1000);
+            if (number >= 900) return "CM" + ToRoman(number - 900);
+            if (number >= 500) return "D" + ToRoman(number - 500);
+            if (number >= 400) return "CD" + ToRoman(number - 400);
+            if (number >= 100) return "C" + ToRoman(number - 100);
+            if (number >= 90) return "XC" + ToRoman(number - 90);
+            if (number >= 50) return "L" + ToRoman(number - 50);
+            if (number >= 40) return "XL" + ToRoman(number - 40);
+            if (number >= 10) return "X" + ToRoman(number - 10);
+            if (number >= 9) return "IX" + ToRoman(number - 9);
+            if (number >= 5) return "V" + ToRoman(number - 5);
+            if (number >= 4) return "IV" + ToRoman(number - 4);
+            if (number >= 1) return "I" + ToRoman(number - 1);
             return "Argument is not valid - Value must be between 1 and 3999";
         }
     }

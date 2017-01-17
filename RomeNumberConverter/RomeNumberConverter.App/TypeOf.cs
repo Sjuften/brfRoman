@@ -1,10 +1,8 @@
-﻿using RomeNumberConverter.App.Interfaces;
-using System.Linq;
+﻿using System.Linq;
 namespace RomeNumberConverter.App
 {
     public static class TypeOf
     {
-        private static string[] romanLetters = new[] { "N", "I", "V", "X", "L", "C", "D", "M" };
 
         public static bool IsDecimal(string number)
         {
@@ -17,6 +15,8 @@ namespace RomeNumberConverter.App
 
         public static bool IsRoman(string roman)
         {
+            var romanLetters = new[] { "N", "I", "V", "X", "L", "C", "D", "M" };
+
             foreach (var letter in roman.ToUpper())
             {
                 if (!romanLetters.Contains(letter.ToString()))

@@ -7,7 +7,7 @@ namespace RomeNumberConverter.App.Types
         public string Input { get; private set; }
         public NullObjectConverter(string input)
         {
-            Input = input.Trim();
+            Input = input;
         }
         public string GetResult() => string.Format($"{Input} is not a valid argument");
     }
