@@ -4,11 +4,11 @@ namespace RomeNumberConverter.App.Types
 {
     public class NullObjectConverter : IConverter
     {
-        public string Input { get; private set; }
+        private string _input;
         public NullObjectConverter(string input)
         {
-            Input = input;
+           _input = input;
         }
-        public string GetResult() => string.Format($"{Input} is not a valid argument");
+        public string GetResult() => string.Format($"{_input} is not a valid argument");
     }
 }

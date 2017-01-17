@@ -7,22 +7,22 @@ namespace RomeNumberConverter.App
 {
     public class RomanDecimalConveter : IConverter
     {
-        public string Input { get; private set; }
+        private string _input;
         public RomanDecimalConveter(string input)
         {
             if (!TypeOf.IsDecimal(input) && !TypeOf.IsRoman(input))
                 throw new ArgumentException("Argument is not valid");
 
-            Input = input.ToUpper().Trim();
+            _input = input.ToUpper().Trim();
         }
 
         public string GetResult()
         {
-            if (TypeOf.IsDecimal(Input))
-                return ToRoman(decimal.Parse(Input));
+            if (TypeOf.IsDecimal(_input))
+                return ToRoman(decimal.Parse(_input));
 
-            if (TypeOf.IsRoman(Input))
-                return ToDecimal(Input);
+            if (TypeOf.IsRoman(_input))
+                return ToDecimal(_input);
 
             else
                 return "Argument is not valid";
