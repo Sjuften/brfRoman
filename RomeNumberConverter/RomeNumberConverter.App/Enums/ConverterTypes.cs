@@ -4,10 +4,10 @@
     {
         public enum Converters
         {
-            RomanDecimal,
-            RomanInteger,
-            RomanHexidecimal,
-            RomanBytes
+            RomanDecimal = 0,
+            RomanInteger = 1,
+            RomanHexidecimal = 2,
+            RomanBytes = 3
         }
     }
 }

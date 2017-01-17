@@ -22,18 +22,19 @@ namespace RomeNumberConverter.App
                 return ToRoman(decimal.Parse(_input));
 
             if (TypeOf.IsRoman(_input))
-                return ToDecimal(_input);
+                return ToDecimal(_input).ToString();
 
             else
-                return "Argument is not valid";
+                throw new ArgumentException("Argument is not valid");
+
         }
 
-        private string ToDecimal(string roman)
+        private decimal ToDecimal(string roman)
         {
             //There is very little information that suggests that the system originally had a notation for zero.
             //However, the letter N has been used to represent zero in a text from around 725AD. This will be used in the algorithm.
             // Rule 7
-            if (roman == "N") return 0.ToString();
+            if (roman == "N") return 0;
 
             // Rule 4
             //The numerals that represent numbers beginning with a '5' (V, L and D) may only appear once in each Roman numeral.
@@ -43,8 +44,8 @@ namespace RomeNumberConverter.App
                 roman.Split('D').Length > 2)
                 //The numerals that represent numbers beginning with a '5'(V, L and D) may only appear once in each Roman numeral.
                 //This rule permits XVI but not VIV.
-                return "input is not valid - according to rule 4";
-            //throw new ArgumentException("Rule 4");
+                //return "input is not valid - according to rule 4";
+                throw new ArgumentException("Rule 4");
 
             // Rule 1
             //A single letter may be repeated up to three times consecutively with each occurrence of the value being additive.
@@ -55,8 +56,7 @@ namespace RomeNumberConverter.App
             {
                 // Valid character?
                 if ("IVXLCDM".IndexOf(numeral) == -1)
-                    return "Input is not valid - according to rule 1";
-                //throw new ArgumentException("Invalid numeral");
+                    throw new ArgumentException("Invalid numeral");
 
                 // Duplicate?
                 if (numeral == last)
@@ -65,8 +65,7 @@ namespace RomeNumberConverter.App
                     if (count == 4)
                         //A single letter may be repeated up to three times consecutively with each occurrence of the value being additive.
                         //This means that I is one, II means two and III is three. However, IIII is incorrect for four.
-                        return "input is not valid - according to rule 1";
-                    //throw new ArgumentException("Rule 1");
+                        throw new ArgumentException("input is not valid - Rule 1");
                 }
                 else
                 {
@@ -94,8 +93,7 @@ namespace RomeNumberConverter.App
                     //Accordingly, ninety-nine is not IC but rather XCIX. The XC part represents ninety and the IX adds the nine.
                     //In addition, once a value has been subtracted from another, no further numeral or pair may match or exceed the subtracted value.
                     //This disallows values such as MCMD or CMC.
-                    return "Input is not valid - According to rule 3";
-                //throw new ArgumentException("Rule 3");
+                    throw new ArgumentException("Input is not valid  - Rule 3");
 
                 // Next digit
                 int nextDigit = 0;
@@ -116,8 +114,7 @@ namespace RomeNumberConverter.App
                             //Accordingly, ninety-nine is not IC but rather XCIX. The XC part represents ninety and the IX adds the nine.
                             //In addition, once a value has been subtracted from another, no further numeral or pair may match or exceed the subtracted value.
                             //This disallows values such as MCMD or CMC.
-                            return "Input is not valid - According to rule 3";
-                        //throw new ArgumentException("Rule 3");
+                            throw new ArgumentException("Input is not valid - Rule 3");
 
                         maxDigit = digit - 1;
                         digit = nextDigit - digit;
@@ -138,15 +135,14 @@ namespace RomeNumberConverter.App
                     //The value must never increase from one letter to the next.
                     //Where there is a subtractive numeral, this rule applies to the combined value of the two numerals involved in the subtraction
                     //when compared to the previous letter. This means that XIX is acceptable but XIM and IIV are not.
-                    return "input is not valid - according to rule 5";
-            //throw new ArgumentException("Rule 5");
+                    throw new ArgumentException("Input is not valid  - Rule 5");
 
             // Rule 2
-            int total = 0;
+            var total = 0;
             foreach (int digit in values)
                 total += digit;
 
-            return total.ToString();
+            return total;
         }
 
         private string ToRoman(decimal number)
