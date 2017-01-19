@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RomeNumberConverter.App;
 using RomeNumberConverter.App.Types;
 using static RomeNumberConverter.App.Enums.ConverterTypes;

@@ -9,6 +9,6 @@ namespace RomeNumberConverter.App.Types
         {
            _input = input;
         }
-        public string GetResult() => string.Format($"{_input} is not a valid argument");
+        public string GetResult() => string.Format($"This converter has not yet been initialized");
     }
 }
