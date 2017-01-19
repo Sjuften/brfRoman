@@ -45,11 +45,11 @@
   <ItemGroup>
     <Compile Include="Enums\ConverterTypes.cs" />
     <Compile Include="Interfaces\IConverter.cs" />
+    <Compile Include="NullObjectConverter.cs" />
     <Compile Include="TypeOf.cs" />
     <Compile Include="Types\RomanDecimalConveter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Types\NullObjectConverter.cs" />
     <Compile Include="Enums\RomanDigits.cs" />
     <Compile Include="ConverterFactory.cs" />
   </ItemGroup>

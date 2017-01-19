@@ -39,7 +39,7 @@ namespace RomeNumberConverter.App
         }
         private string ToRoman(decimal number)
         {
-            if ((number < 0) || (number > 3999)) return "Argument is not valid - Value must be between 1 and 3999";
+            if ((number < 0) || (number > 3999)) throw new ArgumentException("Argument is not valid - Value must be between 1 and 3999");
             if (number < 1) return string.Empty;
             if (number >= 1000) return "M" + ToRoman(number - 1000);
             if (number >= 900) return "CM" + ToRoman(number - 900);
@@ -54,7 +54,7 @@ namespace RomeNumberConverter.App
             if (number >= 5) return "V" + ToRoman(number - 5);
             if (number >= 4) return "IV" + ToRoman(number - 4);
             if (number >= 1) return "I" + ToRoman(number - 1);
-            return "Argument is not valid - Value must be between 1 and 3999";
+            throw new ArgumentException("Argument is not valid - Value must be between 1 and 3999");
         }
         private int TotalValue(ArrayList values)
         {
@@ -131,13 +131,10 @@ namespace RomeNumberConverter.App
         {
             // Rule 4
             //The numerals that represent numbers beginning with a '5' (V, L and D) may only appear once in each Roman numeral.
-            //This rule permits XVI but not VIV.
             if (roman.Split('V').Length > 2 ||
                 roman.Split('L').Length > 2 ||
                 roman.Split('D').Length > 2)
                 //The numerals that represent numbers beginning with a '5'(V, L and D) may only appear once in each Roman numeral.
-                //This rule permits XVI but not VIV.
-                //return "input is not valid - according to rule 4";
                 throw new ArgumentException("Rule 4");
         }
         private void ValidateLetterRepetition(string roman)
