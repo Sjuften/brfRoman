@@ -19,11 +19,11 @@ namespace RomeNumberConverter.Test
         public void TypeOfDecimalFalse()
         {
             var expected = false;
-            var isDecimal = TypeOf.IsDecimal("XX");
+            var isDecimal = TypeOf.IsDecimal("IsNotDecimal");
             Assert.AreEqual(expected, isDecimal);
         }
         [TestMethod]
-        public void TypeOfRoman()
+        public void TypeOfRomanTrue()
         {
             var expected = true;
             var isDecimal = TypeOf.IsRoman("X");
