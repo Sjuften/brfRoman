@@ -15,7 +15,7 @@ namespace RomeNumberConverter.App
 
         public static bool IsRoman(string roman)
         {
-            var romanLetters = new[] { "N", "I", "V", "X", "L", "C", "D", "M" };
+            var romanLetters = new[] { "I", "V", "X", "L", "C", "D", "M" };
 
             foreach (var letter in roman.ToUpper())
             {
@@ -24,7 +24,6 @@ namespace RomeNumberConverter.App
                     return false;
                 }
             }
-
             return true;
         }
 

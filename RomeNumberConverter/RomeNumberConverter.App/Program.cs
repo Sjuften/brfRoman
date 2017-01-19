@@ -12,6 +12,7 @@ namespace RomeNumberConverter.App
             Console.WriteLine();
             while (true)
             {
+
                 Console.WriteLine("Enter a number(A roman value or number value)");
                 var input = Console.ReadLine().Trim();
                 var result = ConverterFactory.Get(input, Converters.RomanDecimal).GetResult();
