@@ -14,13 +14,5 @@ namespace RomeNumberConverter.Test
             var romanDecimal = ConverterFactory.Get(string.Empty, Converters.RomanDecimal);
             Assert.IsInstanceOfType(romanDecimal, typeof(RomanDecimalConveter));
         }
-
-        [TestMethod]
-        public void ConvertFactoryReturnNullObjectConverterWithInvalidInputForNotinitializedConverters()
-        {
-            var nullObjectConverter = ConverterFactory.Get(string.Empty, Converters.RomanInteger);
-            Assert.IsInstanceOfType(nullObjectConverter, typeof(NullObjectConverter));
-        }
-
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RomeNumberConverter.App;
-using RomeNumberConverter.App.Interfaces;
 
 namespace RomeNumberConverter.Test
 {
